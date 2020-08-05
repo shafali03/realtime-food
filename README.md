@@ -1,7 +1,7 @@
 # Real Time Food
 
 
-### Package install
+### Packages installed
 
 ```
 yarn init    
@@ -10,3 +10,9 @@ yarn add laravel-mix -D
 yarn add nodemon -D      
 
 ```
+
+
+
+Watch sass -  ```yarn watch```
+
+Start nodemon - ```yarn dev```
