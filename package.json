@@ -4,6 +4,10 @@
   "description": "Real time food",
   "main": "index.js",
   "author": "Shaf",
+  "scripts": {
+    "server": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.3",
