@@ -40,3 +40,12 @@ section.hero {
   color: #fff;
 }
 
+.btn-primary {
+  background: #A2D729;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: #70911d;
+}
+
