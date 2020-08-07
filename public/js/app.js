@@ -115,8 +115,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/code/Desktop/node/realtime-food/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/code/Desktop/node/realtime-food/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /Users/code/Desktop/NODE/realtime-food/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/code/Desktop/NODE/realtime-food/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
