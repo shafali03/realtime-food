@@ -8,15 +8,20 @@ const PORT = process.env.PORT || 4000
 // Assets
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
-
-
+// Template engine
 app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
 
+
+// Routes 
+app.get('/', (req, res) => {
+  res.render('home')
+})
+
+app.get('/cart', (req, res) => {
+  res.render('customers/cart')
+})
 
 
 app.listen(PORT, () => {
