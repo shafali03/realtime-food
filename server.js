@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const ejs = require('ejs')
@@ -5,6 +6,10 @@ const path = require('path')
 const expressLayout = require('express-ejs-layouts')
 const PORT = process.env.PORT || 4000
 const mongoose = require('mongoose')
+const session = require('express-session')
+const flash = require('express-flash')
+
+
 //Database connection
 const url = 'mongodb://localhost/food';
 
@@ -17,6 +22,15 @@ connection.once('open', () => {
 });
 
 
+// Session config
+app.use(session({
+  secret: process.env.COOKIE_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookies: { maxAge: 1000 * 60 * 24 } // 24 hours
+}))
+
+app.use(flash())
 
 
 // Assets
