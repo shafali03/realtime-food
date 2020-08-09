@@ -11,7 +11,8 @@ yarn add nodemon -D
 yarn add mongoose  
 yarn add express-session 
 yarn add dotenv
-yarn add express-flash  
+yarn add express-flash 
+yarn add connect-mongo 
 
 ```
 
