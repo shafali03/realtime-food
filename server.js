@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4000
 const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
+const MongoDbStore = require('connect-mongo')(session)
 
 
 //Database connection
@@ -22,10 +23,17 @@ connection.once('open', () => {
 });
 
 
+// Session store
+let mongoStore = new MongoDbStore({
+  mongooseConnection: connection,
+  collection: 'sessions'
+})
+
 // Session config
 app.use(session({
   secret: process.env.COOKIE_SECRET,
   resave: false,
+  store: mongoStore,
   saveUninitialized: false,
   cookies: { maxAge: 1000 * 60 * 24 } // 24 hours
 }))
