@@ -35,7 +35,7 @@ app.use(session({
   resave: false,
   store: mongoStore,
   saveUninitialized: false,
-  cookies: { maxAge: 1000 * 60 * 24 } // 24 hours
+  cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hours
 }))
 
 app.use(flash())
