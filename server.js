@@ -5,9 +5,8 @@ const path = require('path')
 const expressLayout = require('express-ejs-layouts')
 const PORT = process.env.PORT || 4000
 const mongoose = require('mongoose')
-
 //Database connection
-const url = 'mongodb://localhost/pizza';
+const url = 'mongodb://localhost/food';
 
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
 const connection = mongoose.connection;
