@@ -43,6 +43,7 @@ app.use(flash())
 
 // Assets
 app.use(express.static('public'))
+app.use(express.json())
 
 // Template engine
 app.use(expressLayout)
