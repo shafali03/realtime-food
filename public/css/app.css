@@ -345,6 +345,10 @@ section.hero {
   color: #fff;
 }
 
+.add-to-cart:focus {
+  outline: none;
+}
+
 .btn-primary {
   background: #A2D729;
   transition: all 0.3s ease-in-out;
