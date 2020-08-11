@@ -13,6 +13,7 @@ function authController() {
       const { name, email, password } = req.body
       // Validate request 
       if (!name || !email || !password) {
+        req.flash('error', 'All fields are required')
         return res.redirect('/register')
       }
       console.log(req.body)
