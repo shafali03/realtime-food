@@ -29,11 +29,7 @@ let mongoStore = new MongoDbStore({
   mongooseConnection: connection,
   collection: 'sessions'
 })
-// Passport config
-const passportInit = require('./app/config/passport')
-passportInit(passport)
-app.use(passport.initialize())
-app.use(passport.session())
+
 
 // Session config
 app.use(session({
@@ -43,6 +39,12 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hours
 }))
+
+// Passport config
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(flash())
 
@@ -55,6 +57,7 @@ app.use(express.json())
 // Global middleware
 app.use((req, res, next) => {
   res.locals.session = req.session
+  res.locals.user = req.user
   next()
 })
 
