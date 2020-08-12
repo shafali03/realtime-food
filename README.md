@@ -15,6 +15,7 @@ yarn add express-flash
 yarn add connect-mongo 
 yarn add axios
 yarn add noty
+yarn add bcrypt
 ```
 
 
