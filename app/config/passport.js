@@ -12,7 +12,7 @@ function init(passport) {
       return done(null, false, { message: 'No user with this email' })
     }
 
-    bcrypt.compare(passport, user).then(match => {
+    bcrypt.compare(passport, user.password).then(match => {
       if (match) {
         return done(null, user, { message: 'Logged in successfully' })
       }
@@ -25,7 +25,7 @@ function init(passport) {
 
   //session 
   passport.serializeUser((user, done) => {
-    doNotTrack(null, user._id)
+    done(null, user._id)
   })
 
   passport.deserializeUser((id, done) => {
