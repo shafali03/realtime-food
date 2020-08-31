@@ -17,6 +17,7 @@ yarn add axios
 yarn add noty
 yarn add bcrypt
 yarn add passport passport-local
+yarn add moment
 ```
 
 
