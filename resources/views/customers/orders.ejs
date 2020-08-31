@@ -9,7 +9,10 @@
       <thead>
         <tr>
           <th class="px-4 py-2 text-left">Orders</th>
+          <th class="px-4 py-2 text-left">House Number</th>
           <th class="px-4 py-2 text-left">Address</th>
+          <th class="px-4 py-2 text-left">Postcode</th>
+          <th class="px-4 py-2 text-left">Phone</th>
           <th class="px-4 py-2 text-left">Time</th>
         </tr>
       </thead>
@@ -18,13 +21,23 @@
         <% orders.forEach((order) => { %>
         <tr>
           <td class="border px-4 py-2">
-            <a class="link" href="/"><%= order._id %></a>
+            <a class="link" href="/">
+              <%= order._id %></a>
+          </td>
+          <td class="border px-4 py-2">
+            <%= order.addressNumber %>
           </td>
           <td class="border px-4 py-2">
             <%= order.address %>
           </td>
           <td class="border px-4 py-2">
-            <%= order.createdAt %>
+            <%= order.postcode %>
+          </td>
+          <td class="border px-4 py-2">
+            <%= order.phone %>
+          </td>
+          <td class="border px-4 py-2">
+            <%= moment(order.createdAt).format('hh:mm A') %>
           </td>
         </tr>
         <% }) %>
